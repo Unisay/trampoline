@@ -1,8 +1,8 @@
-package example
+package example.selfrecursion
 
 import scala.io.StdIn.{readLine => waitForUserToPressEnter}
 
-object StackOverflow {
+object StackOverflowExample {
 
   def nonTailRecursiveFunction(xs: List[Int]): List[Int] = xs match {
     case Nil =>

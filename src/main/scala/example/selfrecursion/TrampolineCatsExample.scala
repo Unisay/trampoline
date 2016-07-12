@@ -1,13 +1,13 @@
-package example
+package example.selfrecursion
 
-import cats.free.Trampoline
+import cats.free.{Free, Trampoline}
 import cats.implicits._
 
 import scala.io.StdIn.{readLine => waitForUserToPressEnter}
 
-object TrampolineCats {
+object TrampolineCatsExample {
 
-  def nonTailRecursiveFunction(xs: List[Int]): Trampoline[List[Int]] = xs match {
+  def nonTailRecursiveFunction(xs: List[Int]): Free[Function0, List[Int]] = xs match {
     case Nil =>
       Trampoline.done(Nil)
     case head :: tail =>

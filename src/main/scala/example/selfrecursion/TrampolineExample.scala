@@ -1,16 +1,16 @@
-import cats.free.Trampoline
-import cats.implicits._
+package example.selfrecursion
+
+import example.trampoline._
 
 import scala.io.StdIn.{readLine => waitForUserToPressEnter}
 
-object ExampleTrampoline {
+object TrampolineExample {
 
   def nonTailRecursiveFunction(xs: List[Int]): Trampoline[List[Int]] = xs match {
     case Nil =>
-      Trampoline.done(Nil)
+      Done(Nil)
     case head :: tail =>
-      Trampoline.suspend(nonTailRecursiveFunction(tail))
-        .map(tailResult => head + 1 :: tailResult)
+      More(() => nonTailRecursiveFunction(tail)).map(tailResult => head + 1 :: tailResult)
   }
 
   def main(args: Array[String]): Unit = {
