@@ -36,6 +36,7 @@ The repository is organized in a set of incremental steps where each step is rep
 Recursion is an essential part of functional programming. But if each call allocates a stack frame, then too much recursion will overflow the stack. Most functional programming languages solve this problem by eliminating stack frames through a process called tail-call optimisation. Unfortunately for Scala programmers, the JVM doesn't perform this optimisation. Tail call elimination in scala is limited to a self recursive tail call.
 
 Examples:
+
 1. Non-tail recursive Fibonacci function: Fibonacci.scala
 2. Tail recursive function: foldLeft
 3. Mutual recursion: even|odd
@@ -43,6 +44,7 @@ Examples:
 ### 2. Solution: rewrite a non-tail recursive function to use accumulator
 
 Example:
+
 1. Tail-recursive fibonacci
 
 ### 3. Solution: use trampolining
