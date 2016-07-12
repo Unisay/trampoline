@@ -1,6 +1,8 @@
-import scala.io.StdIn.{readLine ⇒ waitForUserToPressEnter}
+package example
 
-object ExampleStackOverflow {
+import scala.io.StdIn.{readLine => waitForUserToPressEnter}
+
+object StackOverflow {
 
   def nonTailRecursiveFunction(xs: List[Int]): List[Int] = xs match {
     case Nil =>
