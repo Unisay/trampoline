@@ -31,7 +31,7 @@ http://www.journaldev.com/4098/java-heap-space-vs-stack-memory
 
 The repository is organized in a set of incremental steps where each step is represented by a git branch prefixed by step number:
 
-### 1. The Stack Overflow Problem (git branch 1-problem)
+### 1. The Problem: stack overflow (git branch 1-problem)
 
 Recursion is an essential part of functional programming. But if each call allocates a stack frame, then too much recursion will overflow the stack. Most functional programming languages solve this problem by eliminating stack frames through a process called tail-call optimisation. Unfortunately for Scala programmers, the JVM doesn't perform this optimisation. Tail call elimination in scala is limited to a self recursive tail call.
 
@@ -41,15 +41,15 @@ Examples:
 2. Tail recursive function: foldLeft
 3. Mutual recursion: even|odd
 
-### 2. Solution: rewrite a non-tail recursive function to use accumulator
+### 2. Solution: rewrite a non-tail recursive function to use accumulator (2-solution-accumulator)
 
 Example:
 
 1. Tail-recursive fibonacci
 
-### 3. Solution: use trampolining
+### 3. Solution: use trampolining (3-solution-trampoline)
 
-Instead of doing a call and consuming a stack frame, we're returning a data structure that captures the call to be done later (in the trampoline loop)
+Idea: instead of doing a call consuming a stack frame, return a lazy data structure that captures the call to be done later on in the trampoline loop which is tail-recursive and hence optimized by compiler into a while loop.
 
 
 # Links
