@@ -27,7 +27,7 @@ Like the method area and heap, the Java stack and stack frames need not be conti
 
 http://www.journaldev.com/4098/java-heap-space-vs-stack-memory
 
-## Demo
+## Code
 
 The repository is organized in a set of incremental steps where each step is represented by a git branch prefixed by step number:
 
@@ -53,4 +53,5 @@ Idea: instead of doing a call consuming a stack frame, return a lazy data struct
 
 
 # Links
+https://skillsmatter.com/skillscasts/3244-stackless-scala-free-monads
 http://blog.richdougherty.com/2009/04/tail-calls-tailrec-and-trampolines.html
