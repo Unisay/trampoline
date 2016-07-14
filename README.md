@@ -37,15 +37,15 @@ Recursion is an essential part of functional programming. But if each call alloc
 
 Examples:
 
-1. Non-tail recursive Fibonacci function: Fibonacci.scala
-2. Tail recursive function: foldLeft
-3. Mutual recursion: even|odd
+1. Non-tail recursive function that [increments list elements](src/main/scala/example/selfrecursion/IncrementWithNonTailRecursion.scala)
+1. Tail recursive function that [increments list elements using foldLeft](src/main/scala/example/selfrecursion/IncrementWithFoldLeft.scala)
+1. Mutual recursion:  [even | odd](src/main/scala/example/mutualrecursion/StackOverflowExample.scala)
 
 ### 2. Solution: rewrite a non-tail recursive function to use accumulator (2-solution-accumulator)
 
 Example:
 
-1. Tail-recursive fibonacci
+1. Using accumulator to [increment list elements](src/main/scala/example/selfrecursion/IncrementWithAccumulator.scala)
 
 ### 3. Solution: use trampolining (3-solution-trampoline)
 
